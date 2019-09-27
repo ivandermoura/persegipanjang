@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:luas_segiempat/hp.dart' as prefix0;
+
+
 
 class Panjangvalidator {
   static String validate(String value){
@@ -8,6 +11,10 @@ class Panjangvalidator {
 }
 
 class Homepage extends StatefulWidget {
+  Homepage({Key key, this.title}) : super(key: key);
+
+ 
+  final String title;
   @override
   _HomepageState createState() => _HomepageState();
 }
@@ -15,8 +22,20 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   var panjang =0,lebar =0,hasil=0;
 
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   final TextEditingController t1 = new TextEditingController( text: "0" );
   final TextEditingController t2 = new TextEditingController( text: "0" );
+
+  
+
+  
 
   void hitungKeliling() {
     setState(() {
@@ -109,11 +128,27 @@ class _HomepageState extends State<Homepage> {
                   onPressed: doClear,
                 ),
               ],
-            )
+            ),
+             new Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+            ),
+             Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.display1,
+            ),
+
         ],
+        
       ),
     ),
-      
+    floatingActionButton: FloatingActionButton(
+      onPressed: _incrementCounter,
+      tooltip: 'Increment',
+      child: Icon(Icons.add),
+    ),
     );
   }
 }

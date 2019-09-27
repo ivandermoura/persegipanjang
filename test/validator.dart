@@ -12,4 +12,6 @@ void main() {
     var result = Panjangvalidator.validate('string');
     expect(result, null);
   });
+
+ 
 }

@@ -1,7 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
 import 'package:luas_segiempat/main.dart';
-import 'package:luas_segiempat/home_page.dart';
+
+
 void main(){
 
   test("Panjang persegi return error string",() {

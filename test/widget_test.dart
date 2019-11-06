@@ -22,7 +22,7 @@ void main(){
     await tester.pumpWidget(Luassegiempat());
     // Enter 'hi' into the TextField.
     
-    await tester.tap(find.byKey(Key('luas')));
+    await tester.press(find.byKey(Key('luas')));
   
     expect(find.byKey(Key('luas')), findsOneWidget);
     expect(find.byKey(Key('keliling')), findsNothing);

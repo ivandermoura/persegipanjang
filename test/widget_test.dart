@@ -4,9 +4,6 @@ import 'package:luas_segiempat/main.dart';
 import 'package:luas_segiempat/home_page.dart';
 
 void main(){
-  Widget maketestablewidget({Widget child}){
-    return MaterialApp(home: child,);
-  }
  
   test("Panjang persegi return error string",() {
     var result = Panjangvalidator.validate('');
@@ -20,18 +17,19 @@ void main(){
    
  
   testWidgets('Add and remove a todo', (WidgetTester tester) async {
-    Luassegiempat ls = Luassegiempat();
+   
     // Build the widget.
-    await tester.pumpWidget(maketestablewidget(child: ls));
+    await tester.pumpWidget(Luassegiempat());
     // Enter 'hi' into the TextField.
+    
     await tester.tap(find.byKey(Key('luas')));
-
+  
     expect(find.byKey(Key('luas')), findsOneWidget);
     expect(find.byKey(Key('keliling')), findsNothing);
-    
-    // Tap the add button.
-   
 
+    await tester.pump();
+    
+    
 });
 
 testWidgets('Counter increments smoke test', (WidgetTester tester) async {

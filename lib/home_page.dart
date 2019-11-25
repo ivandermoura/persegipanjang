@@ -10,9 +10,7 @@ class Panjangvalidator {
 }
 
 class Homepage extends StatefulWidget {
-  Homepage({Key key, this.title}) : super(key: key);
-
-  final String title;
+  
   @override
   _HomepageState createState() => _HomepageState();
 }
@@ -28,8 +26,8 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
-  final TextEditingController t1 = new TextEditingController(text: "0");
-  final TextEditingController t2 = new TextEditingController(text: "0");
+  final TextEditingController t1 = new TextEditingController(text: "-");
+  final TextEditingController t2 = new TextEditingController(text: "-");
 
   void hitungKeliling() {
     setState(() {
@@ -49,8 +47,8 @@ class _HomepageState extends State<Homepage> {
 
   void doClear() {
     setState(() {
-      t1.text = "0";
-      t2.text = "0";
+      t1.text = "-";
+      t2.text = "-";
       hasil = 0;
     });
   }
@@ -94,6 +92,7 @@ class _HomepageState extends State<Homepage> {
                   child: new Text("Luas Persegi"),
                   color: Colors.greenAccent,
                   onPressed: hitungLuas,
+                  key: Key('luas'),
                 ),
                 new MaterialButton(
                   child: new Text("Keliling Persegi"),

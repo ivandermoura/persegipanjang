@@ -105,10 +105,15 @@ class _HomepageState extends State<Homepage> {
               padding: const EdgeInsets.only(top: 10.0),
             ),
             new Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 new MaterialButton(
                   child: new Text("Clear"),
+                  color: Colors.greenAccent,
+                  onPressed: doClear,
+                ),
+                 new MaterialButton(
+                  child: new Text("Setting Arp"),
                   color: Colors.greenAccent,
                   onPressed: doClear,
                 ),

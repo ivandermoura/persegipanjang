@@ -109,7 +109,7 @@ class _HomepageState extends State<Homepage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new MaterialButton(
-                  child: new Text("Clear"),
+                  child: new Text("Bersihkan"),
                   color: Colors.greenAccent,
                   onPressed: doClear,
                 ),

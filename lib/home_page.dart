@@ -112,11 +112,6 @@ class _HomepageState extends State<Homepage> {
                   color: Colors.greenAccent,
                   onPressed: doClear,
                 ),
-                 new MaterialButton(
-                  child: new Text("Setting Arp"),
-                  color: Colors.greenAccent,
-                  onPressed: doClear,
-                ),
               ],
             ),
             new Padding(

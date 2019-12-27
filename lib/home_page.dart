@@ -94,6 +94,7 @@ class _HomepageState extends State<Homepage> {
                   child: new Text("Luas Persegi"),
                   color: Colors.greenAccent,
                   onPressed: hitungLuas,
+                  key: Key('luas'),
                 ),
                 new MaterialButton(
                   child: new Text("Keliling Persegi"),

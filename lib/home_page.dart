@@ -1,12 +1,48 @@
 import 'package:flutter/material.dart';
 
-
-
 class Panjangvalidator {
   static String validate(String value) {
     return value.isEmpty ? 'kolom panjang tidak boleh kosong' : null;
-
   }
+}
+
+class Persegipanjang {
+  int _hasil, _panjang, _lebar;
+
+  
+  Persegipanjang() {
+    _hasil = 0;
+    _panjang = 0;
+    _lebar = 0;
+
+    
+  }
+  int get panjang => _panjang;
+
+   
+  set panjang(int nilai) {
+    if (nilai <= 0) {
+      nilai *= -1;
+    }
+    _hasil = nilai;
+  }
+
+  int get lebar => _lebar;
+  set lebar(int nilai) {
+    if (nilai <= 0) {
+      nilai *= -1;
+    }
+    _hasil = nilai;
+  }
+
+  int get hasil => _hasil;
+  set hasil(int nilai) {
+    if (nilai <= 0) {
+      nilai *= -1;
+    }
+    _hasil = nilai;
+  }
+
 }
 
 class Homepage extends StatefulWidget {
@@ -19,22 +55,15 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   var panjang = 0, lebar = 0, hasil = 0;
-
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  Persegipanjang p = new Persegipanjang();
 
   final TextEditingController t1 = new TextEditingController(text: "0");
   final TextEditingController t2 = new TextEditingController(text: "0");
 
   void hitungKeliling() {
     setState(() {
-      panjang = int.parse(t1.text);
-      lebar = int.parse(t2.text);
+      lebar = int.parse(t1.text); 
+      panjang = int.parse(t2.text);
       hasil = 2 * panjang + 2 * lebar;
     });
   }
@@ -77,12 +106,14 @@ class _HomepageState extends State<Homepage> {
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(hintText: "Panjang Persegi"),
               controller: t1,
+              key: Key('TPersegi'),
               validator: Panjangvalidator.validate,
             ),
             new TextFormField(
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(hintText: "Lebar Persegi"),
               controller: t2,
+              key: Key('LPersegi'),
             ),
             new Padding(
               padding: const EdgeInsets.only(top: 10.0),
@@ -100,6 +131,7 @@ class _HomepageState extends State<Homepage> {
                   child: new Text("Keliling Persegi"),
                   color: Colors.greenAccent,
                   onPressed: hitungKeliling,
+                  key: Key('keliling'),
                 ),
               ],
             ),
@@ -113,26 +145,15 @@ class _HomepageState extends State<Homepage> {
                   child: new Text("Bersihkan"),
                   color: Colors.greenAccent,
                   onPressed: doClear,
+                  key: Key('Clear'),
                 ),
               ],
             ),
             new Padding(
               padding: const EdgeInsets.only(top: 5.0),
             ),
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }

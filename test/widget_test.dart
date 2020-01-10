@@ -32,7 +32,7 @@ void main(){
     //await tester.press(find.byKey(Key('luas')));
   
     expect(find.byKey(Key('luas')), findsOneWidget);
-    expect(find.byKey(Key('keliling')), findsNothing);
+    expect(find.byKey(Key('keliling')), findsOneWidget);
 
     await tester.pump();
     

@@ -10,7 +10,7 @@ class Luassegiempat extends StatelessWidget {
       title: "Luas Segi Empat",
       theme: new ThemeData(primarySwatch: Colors.red),
       home:  new Homepage(),
-      //test2
+      //test21
     );
   }
 }
